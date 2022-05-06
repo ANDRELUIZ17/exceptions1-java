@@ -37,9 +37,17 @@ public class Reservas {
         long diff = checkOut.getTime() - checkIn.getTime(); // pego a diferenças de duas datas em milessegundos
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
-    public void atualizacaoData (Date checkIn, Date checkOut) {
+    public String atualizacaoData (Date checkIn, Date checkOut) {
+        Date now = new Date();
+        if (checkIn.before(now)|| checkOut.before(now)) {
+            return "As datas de reserva para atualização devem ser datas futuras";
+        }
+        if(!checkOut.after(checkIn)){
+            return "As data de check-out deve ser posterior à data de check-in";
+        }
         this.checkIn = checkIn;
         this.checkOut = checkOut;
+        return null;
     }
     @Override
     public String toString () {
