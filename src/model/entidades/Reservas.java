@@ -14,7 +14,7 @@ public class Reservas {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     public Reservas(Integer numeroDosQuartos, Date checkIn, Date checkOut){
-        if(!checkOut.after(checkIn)){ /*E sempre com ja tratar exceção no comecinho, issi se chama programação defensiva*/
+        if(!checkOut.after(checkIn)){ /*E sempre com ja tratar exceção no comecinho, isso se chama programação defensiva*/
             throw new DomainException("As data de check-out deve ser posterior à data de check-in");
         }
         this.numeroDosQuartos = numeroDosQuartos;
