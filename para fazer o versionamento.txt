@@ -1,3 +1,8 @@
 1. git init
-2. git remote add origin  + o https do projeto no github
+2. git remote add origin  // + o https do projeto no github
 3. git pull origin main
+4. git status  // so para ver o que mudou no projeto
+5. git add .
+6. git status // vai falar que todo mundo esta pronto pra ser comitado
+7.git commit -m "Versao"
+e feito isso vou dar um git push -u origin master
